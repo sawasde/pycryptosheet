@@ -78,12 +78,16 @@ def test_parse_cryptos_json():
     assert isinstance(pycryptosheet.CRYPTO_MAP, dict)
 
 
-def test_parse_config_json():
+def test_parse_config_json(monkeypatch):
 
+    monkeypatch.setenv("BIN_API_KEY", "key")
+    monkeypatch.setenv("BIN_API_SECRET", "secret")
+    
     pycryptosheet.parse_config_json()
 
-    assert isinstance(pycryptosheet.TMS_CELL, str)
+    assert isinstance(pycryptosheet.SHEET_NAME, str)
     assert isinstance(pycryptosheet.LOOP_TIMEOUT, int)
+    assert isinstance(pycryptosheet.TMS_CELL, str)
 
 
 def test_parse_delenv_config_json(monkeypatch):
