@@ -7,6 +7,13 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials as sac
 from twisted.internet import task, reactor
 
+GOOGLE_CREDS_PATH = ""
+BIN_API_KEY = ""
+BIN_API_SECRET = ""
+SHEET_NAME = ""
+LOOP_TIMEOUT = ""
+TMS_CELL = ""
+GD_WORKSHEET = ""
 
 # Font Colors
 RED_DICT = {"foregroundColor": {
@@ -141,6 +148,7 @@ def main():
     creds = sac.from_json_keyfile_name(GOOGLE_CREDS_PATH, scope)
     client = gspread.authorize(creds)
     sheet = client.open(SHEET_NAME)
+    print(sheet)
     GD_WORKSHEET = sheet.get_worksheet(0)
 
     # When Timeout is set a loop in seconds should start

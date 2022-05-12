@@ -107,6 +107,8 @@ def test_main_one_loop(monkeypatch):
     monkeypatch.setattr(sac, "from_json_keyfile_name", lambda x, y: None)
     monkeypatch.setattr(gspread, "authorize", mock_authorize)
 
+    pycryptosheet.main()
+
     assert MockSheet(None).get_worksheet(None) == pycryptosheet.GD_WORKSHEET
 
 
@@ -120,6 +122,8 @@ def test_main_multiple_loop(monkeypatch):
     monkeypatch.setattr(gspread, "authorize", mock_authorize)
 
     pycryptosheet.LOOP_TIMEOUT = 60
+
+    pycryptosheet.main()
 
     assert MockSheet(None).get_worksheet(None) == pycryptosheet.GD_WORKSHEET
 
