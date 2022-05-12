@@ -9,25 +9,25 @@ from twisted.internet import task, reactor
 
 
 # Font Colors
-RED_DICT = {'foregroundColor': {
-                'red': 0.99,
-                'green': 0.0,
-                'blue': 0.0}}
+RED_DICT = {"foregroundColor": {
+                "red": 0.99,
+                "green": 0.0,
+                "blue": 0.0}}
 
-GREEN_DICT = {'foregroundColor': {
-                'red': 0.0,
-                'green': 0.66,
-                'blue': 0.0}}
+GREEN_DICT = {"foregroundColor": {
+                "red": 0.0,
+                "green": 0.66,
+                "blue": 0.0}}
 
 
-def get_price_by_symbol(symbol='BTCBUSD'):
+def get_price_by_symbol(symbol="BTCBUSD"):
 
     try:
 
         for sym_dic in ALL_CRYPTO_PRICES:
 
-            if sym_dic['symbol'] == symbol:
-                return float(sym_dic['price'])
+            if sym_dic["symbol"] == symbol:
+                return float(sym_dic["price"])
 
         return 0.0
 
@@ -43,7 +43,7 @@ def update_cells(symbol, col, row, update_colors=True):
         curr_price = get_price_by_symbol(symbol)
 
         # Get price on the sheet
-        last_price = float(GD_WORKSHEET.acell(cell).value.replace(',', '.'))
+        last_price = float(GD_WORKSHEET.acell(cell).value.replace(",", "."))
 
         # Update the new price value
         GD_WORKSHEET.update(cell, curr_price)
@@ -51,9 +51,9 @@ def update_cells(symbol, col, row, update_colors=True):
         # Update colors
         if update_colors:
             if last_price <= curr_price:
-                GD_WORKSHEET.format(cell, {'textFormat': GREEN_DICT})
+                GD_WORKSHEET.format(cell, {"textFormat": GREEN_DICT})
             else:
-                GD_WORKSHEET.format(cell, {'textFormat': RED_DICT})
+                GD_WORKSHEET.format(cell, {"textFormat": RED_DICT})
 
     except Exception as e:
         print("[ERROR] Unable to Update cells:", symbol,  e)
@@ -77,7 +77,7 @@ def loop():
 
 
 def parse_config_json():
-    '''Parse the configuration file'''
+    """Parse the configuration file"""
 
     global GOOGLE_CREDS_PATH
     global BIN_API_KEY
@@ -89,6 +89,7 @@ def parse_config_json():
     try:
         with open("config/config.json") as f:
             config = json.load(f)
+
         GOOGLE_CREDS_PATH = config["google_creds_path"]
         BIN_API_KEY = os.environ[config["binance_api_key"]]
         BIN_API_SECRET = os.environ[config["binance_api_secret"]]
@@ -106,7 +107,7 @@ def parse_config_json():
 
 
 def parse_cryptos_json():
-    '''Parse the crypto mapper file'''
+    """Parse the crypto mapper file"""
 
     global CRYPTO_MAP
 
@@ -118,8 +119,8 @@ def parse_cryptos_json():
         print("[ERROR] Unable to parse crypto file:", e)
 
 
-def main(unit_test=False):
-    ''' Main method '''
+def main():
+    """ Main method """
 
     global BIN_CLIENT
     global GD_WORKSHEET
@@ -134,8 +135,8 @@ def main(unit_test=False):
     BIN_CLIENT = Client(BIN_API_KEY, BIN_API_SECRET)
 
     # Google Sheets
-    scope = ['https://spreadsheets.google.com/feeds',
-             'https://www.googleapis.com/auth/drive']
+    scope = ["https://spreadsheets.google.com/feeds",
+             "https://www.googleapis.com/auth/drive"]
 
     creds = sac.from_json_keyfile_name(GOOGLE_CREDS_PATH, scope)
     client = gspread.authorize(creds)
@@ -153,6 +154,6 @@ def main(unit_test=False):
         loop()
 
 
-if __name__ == '__main__':
-    ''' Continue on Main'''
+if __name__ == "__main__":
+    """ Continue on Main"""
     main()
