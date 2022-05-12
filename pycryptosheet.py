@@ -148,7 +148,6 @@ def main():
     creds = sac.from_json_keyfile_name(GOOGLE_CREDS_PATH, scope)
     client = gspread.authorize(creds)
     sheet = client.open(SHEET_NAME)
-    print(sheet)
     GD_WORKSHEET = sheet.get_worksheet(0)
 
     # When Timeout is set a loop in seconds should start

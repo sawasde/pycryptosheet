@@ -82,11 +82,8 @@ def test_parse_config_json():
 
     pycryptosheet.parse_config_json()
 
-    with open("config/config.json") as f:
-        config = json.load(f)
-
-    assert config["timestamp_cell"] == pycryptosheet.TMS_CELL
     assert isinstance(pycryptosheet.TMS_CELL, str)
+    assert isinstance(pycryptosheet.LOOP_TIMEOUT, int)
 
 
 def test_parse_delenv_config_json(monkeypatch):
@@ -106,6 +103,8 @@ def test_main_one_loop(monkeypatch):
     monkeypatch.setattr(pycryptosheet, "parse_config_json", lambda: None)
     monkeypatch.setattr(sac, "from_json_keyfile_name", lambda x, y: None)
     monkeypatch.setattr(gspread, "authorize", mock_authorize)
+
+    pycryptosheet.LOOP_TIMEOUT = 0
 
     pycryptosheet.main()
 
