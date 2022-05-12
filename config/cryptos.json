@@ -1,0 +1,8 @@
+{   "BTCBUSD" : {"col" : "C", "row" : 2},
+    "ETHBUSD" : {"col" : "C", "row" : 3},
+    "ADABUSD" : {"col" : "C", "row" : 4},
+    "SOLBUSD" : {"col" : "C", "row" : 5},
+    "DOTBUSD" : {"col" : "C", "row" : 6},
+    "BNBBUSD" : {"col" : "C", "row" : 7},
+    "AXSBUSD" : {"col" : "C", "row" : 8}
+}

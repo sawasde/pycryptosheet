@@ -1,0 +1,8 @@
+{
+    "google_creds_path" : "gs-creds.json",
+    "binance_api_key" : "BIN_API_KEY",
+    "binance_api_secret" : "BIN_API_SECRET",
+    "sheet_name" : "CRYPTO_EXAMPLE",
+    "loop_timeout" : 0,
+    "timestamp_cell" : "A1"
+}
