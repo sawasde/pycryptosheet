@@ -13,3 +13,7 @@ Sheets is an extraoridnary tool to make finance calculations, in case you want t
 # Configuration
 # Usage
 
+
+
+https://user-images.githubusercontent.com/22453747/177639922-a12ca486-471d-4f8d-a412-ed5b606b5149.mp4
+
