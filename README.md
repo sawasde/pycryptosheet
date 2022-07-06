@@ -12,7 +12,7 @@ Several crypto-third-party tools could be potentially connected to google sheets
 
 Excel Sheets is an extraordinary tool to make finance calculations, in case you want to know how your portfolio is going or take investing decisions based on prices, volumes, liquidity, etc.
 
- ![demo] https://user-images.githubusercontent.com/22453747/177639922-a12ca486-471d-4f8d-a412-ed5b606b5149.mp4
+https://user-images.githubusercontent.com/22453747/177639922-a12ca486-471d-4f8d-a412-ed5b606b5149.mp4
   
 
 # Prerequisites
