@@ -1,8 +1,8 @@
-{   "BTCBUSD" : {"col" : "C", "row" : 2},
-    "ETHBUSD" : {"col" : "C", "row" : 3},
-    "ADABUSD" : {"col" : "C", "row" : 4},
-    "SOLBUSD" : {"col" : "C", "row" : 5},
-    "DOTBUSD" : {"col" : "C", "row" : 6},
-    "BNBBUSD" : {"col" : "C", "row" : 7},
-    "AXSBUSD" : {"col" : "C", "row" : 8}
+{   "BTCUSDT" : {"col" : "C", "row" : 2},
+    "ETHUSDT" : {"col" : "C", "row" : 3},
+    "ADAUSDT" : {"col" : "C", "row" : 4},
+    "SOLUSDT" : {"col" : "C", "row" : 5},
+    "DOTUSDT" : {"col" : "C", "row" : 6},
+    "BNBUSDT" : {"col" : "C", "row" : 7},
+    "AXSUSDT" : {"col" : "C", "row" : 8}
 }
