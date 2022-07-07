@@ -37,10 +37,10 @@ https://user-images.githubusercontent.com/22453747/177639922-a12ca486-471d-4f8d-
 
 Install dependencies
 
-`pip install -r requirements`
+    pip install -r requirements
 
 Execute
 
-`python3 pycryptosheet.py`
+    python3 pycryptosheet.py
 
 Now the google sheet should be updated with new values once if no loop is set or every X seconds if `loop_timeout` is set.
