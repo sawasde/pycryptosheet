@@ -1,6 +1,6 @@
 # Pycryptosheet
 
-[![Na|solid](https://img.shields.io/badge/license-GPL-brightgreen)](https://github.com/alturiano/pycryptosheet/blob/main/LICENSE) ![Na|solid](https://img.shields.io/badge/python-3.8-brightgreen) ![example workflow](https://github.com/alturiano/pycryptosheet/actions/workflows/python-app.yml/badge.svg)
+[![Na|solid](https://img.shields.io/badge/license-GPL-brightgreen)](https://github.com/alturiano/pycryptosheet/blob/main/LICENSE) ![Na|solid](https://img.shields.io/badge/python-3.10-brightgreen) ![example workflow](https://github.com/alturiano/pycryptosheet/actions/workflows/python-app.yml/badge.svg)
 
 Get the latest prices of several crypto assets on **Google Sheets**. Download the sheet in excel format if required.
 
