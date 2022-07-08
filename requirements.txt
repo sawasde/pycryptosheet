@@ -50,7 +50,6 @@ rsa==4.8
 six==1.16.0
 tomli==2.0.1
 Twisted==22.4.0
-twisted-iocpsupport==1.0.2
 typing_extensions==4.2.0
 tzdata==2022.1
 tzlocal==4.2
